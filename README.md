@@ -4,47 +4,37 @@
 Provides Serilog logging adapter for ServiceStack Core.
 
 ### Release notes
-This is a cumulation of two other projects that brought Serilog to ServiceStack plus improvments. This version is built on .NETStandard 1.6. 
-
-Acknowledgements to https://github.com/alexeyzimarev/ServiceStack.Extras.Serilog & https://github.com/nickvane/ServiceStack.Logging.Serilog
+This is a .NETStandard 1.6 version of the ServiceStack.Logging.Serilog lib. 
+https://github.com/ServiceStack/ServiceStack/tree/master/src/ServiceStack.Logging.Serilog
 
 ### Usage
 
 ```csharp
-var logger = new LoggerConfiguration()
-    .WriteTo.LiterateConsole()
-    .MinimumLevel.Debug()
-    .CreateLogger();
-
-LogManager.LogFactory = new SerilogFactory(logger);
+LogManager.LogFactory = new SerilogFactory();
 ```
 
-Use the global Log.Logger instance.
+Use Serilog's destructuring operator and ForContext.
 
 ```csharp
-Log.Manager.LogFactory = new SerilogFactory();
-```
-
-Use Serilog's ForContext with destructuring operator.
-
-```csharp
-private readonly ILog _logAppHostContext;
-
-_logAppHostContext = new SerilogFactory(logger).GetLogger(typeof(AppHost));
+public static ILog Log = LogManager.GetLogger(typeof(TestServices));
 
 var testObj = new TestObj
 {
     Prop1 = "test",
-    Prop2 = -99
+    Prop2 = -99,
+	Prop3 = null
 };
 
-_logAppHostContext.DebugFormat("Hi! {@testObj}", testObj);
+Log.DebugFormat("Hi! {@testObj}", testObj);
+
+Log.ForContext<TestObj>().DebugFormat("Hi! {@testObj}", testObj);
 ```
 
 ```
 Logging output:
 
-09:42:06.474 |  1 | Hi! TestObj {Prop1="test", Prop2=-99}   (TwApi.CoreServicesHost.AppHost)
+15:37:06.398 |  3 | Hi! TestObj {Prop1="test", Prop2=-99, Prop3=null}   (ServiceInterface.TestServices)
+15:37:06.401 |  3 | Hi! TestObj {Prop1="test", Prop2=-99, Prop3=null}   (ServiceInterface.TestServices+TestObj)
 ```
 
 ###### Serilog output template (if you're curious):

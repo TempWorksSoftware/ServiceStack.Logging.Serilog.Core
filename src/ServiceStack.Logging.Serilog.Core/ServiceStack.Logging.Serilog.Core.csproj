@@ -4,14 +4,13 @@
     <TargetFramework>netstandard1.6</TargetFramework>
     <AssemblyName>ServiceStack.Logging.Serilog.Core</AssemblyName>
     <RootNamespace>ServiceStack.Logging.Serilog</RootNamespace>
-    <Version>1.0.1</Version>
+    <Version>1.0.3</Version>
     <Authors>Paul Czywczynski</Authors>
     <Company>TempWorks Software Labs</Company>
-    <Description>Provides Serilog logging adapter for ServiceStack Core.</Description>
-    <PackageReleaseNotes>This is a cumulation of two other projects that brought Serilog to ServiceStack plus improvments. This version is built on .NETStandard 1.6. Acknowledgements to https://github.com/alexeyzimarev/ServiceStack.Extras.Serilog &amp; https://github.com/nickvane/ServiceStack.Logging.Serilog</PackageReleaseNotes>
+    <Description>This is a .NETStandard 1.6 version of the ServiceStack.Logging.Serilog lib. https://github.com/ServiceStack/ServiceStack/tree/master/src/ServiceStack.Logging.Serilog</Description>
+    <PackageReleaseNotes>This is a .NETStandard 1.6 version of the ServiceStack.Logging.Serilog lib. https://github.com/ServiceStack/ServiceStack/tree/master/src/ServiceStack.Logging.Serilog</PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/tempworks/ServiceStack.Logging.Serilog.Core</PackageProjectUrl>
-    <PackageLicenseUrl>https://raw.githubusercontent.com/tempworks/ServiceStack.Logging.Serilog.Core/master/LICENSE</PackageLicenseUrl>
-    <Copyright>TempWorks Software</Copyright>
+    <PackageLicenseUrl>https://github.com/ServiceStack/ServiceStack/blob/master/license.txt</PackageLicenseUrl>
     <RepositoryUrl>https://github.com/tempworks/ServiceStack.Logging.Serilog.Core</RepositoryUrl>
     <PackageTags>ServiceStack,serilog</PackageTags>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
@@ -19,7 +18,7 @@
 
   <ItemGroup>
     <PackageReference Include="Serilog" Version="2.4.0" />
-    <PackageReference Include="ServiceStack.Common.Core" Version="1.0.40" />
+    <PackageReference Include="ServiceStack.Core" Version="1.0.40" />
   </ItemGroup>
 
 </Project>
