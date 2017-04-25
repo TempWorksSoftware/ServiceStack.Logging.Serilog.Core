@@ -41,12 +41,13 @@ var testObj = new TestObj
 _logAppHostContext.DebugFormat("Hi! {@testObj}", testObj);
 ```
 
-Output:
 ```
+Logging output:
+
 09:42:06.474 |  1 | Hi! TestObj {Prop1="test", Prop2=-99}   (TwApi.CoreServicesHost.AppHost)
 ```
 
-Serilog output template (if you're curious):
+###### Serilog output template (if you're curious):
 ```
 "{Timestamp:HH:mm:ss.fff} | {ThreadId,2} | {Message}   ({SourceContext}){NewLine}{Exception}"
 ```
