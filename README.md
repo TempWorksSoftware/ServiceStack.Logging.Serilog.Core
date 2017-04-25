@@ -1,3 +1,5 @@
+[![NuGet](https://img.shields.io/nuget/v/Nuget.Core.svg)](https://www.nuget.org/packages/ServiceStack.Logging.Serilog.Core)
+
 # ServiceStack.Logging.Serilog.Core
 Provides Serilog logging adapter for ServiceStack Core.
 
@@ -39,12 +41,12 @@ var testObj = new TestObj
 _logAppHostContext.DebugFormat("Hi! {@testObj}", testObj);
 ```
 
-```text
 Output:
+```
 09:42:06.474 |  1 | Hi! TestObj {Prop1="test", Prop2=-99}   (TwApi.CoreServicesHost.AppHost)
 ```
 
-```text
-Output template:
+Serilog output template (if you're curious):
+```
 "{Timestamp:HH:mm:ss.fff} | {ThreadId,2} | {Message}   ({SourceContext}){NewLine}{Exception}"
 ```
