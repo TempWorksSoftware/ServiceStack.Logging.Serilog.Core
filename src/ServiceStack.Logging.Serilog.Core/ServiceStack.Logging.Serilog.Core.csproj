@@ -4,7 +4,7 @@
     <TargetFramework>netstandard1.6</TargetFramework>
     <AssemblyName>ServiceStack.Logging.Serilog.Core</AssemblyName>
     <RootNamespace>ServiceStack.Logging.Serilog</RootNamespace>
-    <Version>1.0.3</Version>
+    <Version>1.0.44</Version>
     <Authors>Paul Czywczynski</Authors>
     <Company>TempWorks Software Labs</Company>
     <Description>This is a .NETStandard 1.6 version of the ServiceStack.Logging.Serilog lib. https://github.com/ServiceStack/ServiceStack/tree/master/src/ServiceStack.Logging.Serilog</Description>
@@ -14,11 +14,13 @@
     <RepositoryUrl>https://github.com/tempworks/ServiceStack.Logging.Serilog.Core</RepositoryUrl>
     <PackageTags>ServiceStack,serilog</PackageTags>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <AssemblyVersion>1.0.44.0</AssemblyVersion>
+    <FileVersion>1.0.44.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Serilog" Version="2.4.0" />
-    <PackageReference Include="ServiceStack.Core" Version="1.0.40" />
+    <PackageReference Include="Serilog" Version="2.5.0" />
+    <PackageReference Include="ServiceStack.Core" Version="1.0.43" />
   </ItemGroup>
 
 </Project>
